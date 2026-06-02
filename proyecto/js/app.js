@@ -1,4 +1,5 @@
-const gameState = {
+// Usar el `gameState` global si ya fue definido por `core/state.js`
+window.gameState = window.gameState || {
     currentMode: 'solitario',    // 'solitario', 'pvp', 'libre'
     difficulty: 'facil',        // 'facil', 'intermedio', 'dificil'
     currentTheme: 'animales',    // El tema seleccionado
@@ -7,3 +8,4 @@ const gameState = {
     totalPairs: 8,               // Cantidad de pares totales a encontrar (mitad del tablero)
     pairsFound: 0                // Contador de pares descubiertos hasta el momento
 };
+const gameState = window.gameState;

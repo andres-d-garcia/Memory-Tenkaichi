@@ -1,0 +1,4 @@
+/* board.css - Grid del tablero y animaciones de cartas */
+.board{display:grid;gap:12px;max-width:720px;margin:0 auto}
+.card{aspect-ratio:1/1;border-radius:8px;backface-visibility:hidden;display:grid;place-items:center}
+.card.flipped{transform:rotateY(180deg)}
