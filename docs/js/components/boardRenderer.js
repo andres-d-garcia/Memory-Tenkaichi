@@ -39,7 +39,12 @@ function renderizarTablero(contenedor, elementos, dimensiones) {
 
     // Si el valor es una ruta de imagen, lo preparamos como variable CSS para usar de fondo
     if (esImagen) {
-        const rutaAbsoluta = new URL(valor, window.location.href).href;
+        let urlBase = window.location.href;
+        // Corrección: Si la URL de GitHub Pages no termina en '/' ni en '.html', le añadimos la barra
+        if (!urlBase.endsWith('/') && !urlBase.endsWith('.html')) {
+            urlBase += '/';
+        }
+        const rutaAbsoluta = new URL(valor, urlBase).href;
         celda.style.setProperty('--card-front-img', `url('${rutaAbsoluta}')`);
     }
 
